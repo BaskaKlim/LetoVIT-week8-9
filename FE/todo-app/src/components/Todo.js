@@ -29,6 +29,15 @@ class Todo extends Component {
         var difference = now.diff(createdAtMoment, "minutes"); 
         //  podmienka 1 a && podmienka 2, !finished je skrateny zapis 
         var badge  = (difference< 10 && !finished) ? <span class="badge badge-danger" style={{  margin: "1em"}}>New</span> :null;
+// zadefinujem si classes card, ktore si upravim v style v css
+let classes = "card";
+/*zadefinujem si pre card podmienky, ktory zo stylov mi ma zavolat, toto iste sa da zapisat aj classes= classes + " customSeccess"
+cize chcem aby mi to vzalo aj formatovanie card a k nemu pridalo az nove styly. Zaroven musi byt "medzera customSuccess"
+lebo ak nedam medzeru tak mi to v stringu spoji ku card a teda vznikne cardcustomSuccess a taku klasu nepozna
+*/
+
+if (finished) classes += " customSuccess";
+else classes += " customDanger";
 
 
         return (
@@ -37,7 +46,7 @@ class Todo extends Component {
                 {/* /pozor na zapis style toto berie ako objekt cize 2x kucerave zatvorky a este width bez uvodzoviek  + ak chcem pridat podmienku na ramcek border card tak si musim napisat if podmienku ku tejto 
                 class  a v podobe stringu preto tie backsticky  a ak card je podmienka: finish zbehneme mi ukon border -succes ak nie je splnena podmienka, nezbehne. Je to vraj uplne skratene IF syntakticky (google it)  */}
                 
-                <div className={`card ${finished && ' border-success'}`} style={{ width: "18rem" }}>
+                <div className= {classes} >
 
                     <div className="card-body">
                         <div className="card-header">
