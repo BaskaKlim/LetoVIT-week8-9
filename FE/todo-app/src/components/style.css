@@ -4,11 +4,11 @@
   }
 
   .customDanger {
-    border-top-color: darkred;
+    border-top-color: lightcoral;
     border-top-width: 3px;
   }
 
   .customSuccess {
-    border-top-color: green;
+    border-top-color: lightseagreen;
     border-top-width: 3px;
   }
