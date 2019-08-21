@@ -1,0 +1,28 @@
+state: {
+  users: [
+    {
+      name: 'John',
+      email: 'john@dummy.com',
+      age: 25,
+      enabled: true
+    },
+    {
+      name: 'Amy',
+      email: 'amy@dummy.com',
+      age: 31,
+      enabled: false
+    },
+    {
+      name: 'Susan',
+      email: 'susan@dummy.com',
+      age: 29,
+      enabled: false
+    },
+    {
+      name: 'Nick',
+      email: 'nick@dummy.com',
+      age: 34,
+      enabled: true
+    }
+  ]
+}
