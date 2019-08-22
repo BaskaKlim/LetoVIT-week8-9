@@ -21,7 +21,7 @@ class Todo extends Component {
 
     render() {
         // robim dynamicky prvok cize todo aby sa mi vedelo menit preto si ho vytvorim ako konstantu s atrobutmi
-        const { title, createdAt, text, finished } = this.props.todo;
+        const { title, createdAt, text, finished, deadlineTime } = this.props.todo;
         //  syntax pre moment zadefinujem si teraz, createdAt mam zadefinovanu, musim ich prekonvertovat na moment a potom pouzivam metodu diff
         var now = moment();
         var createdAtMoment = moment(createdAt);
@@ -64,9 +64,15 @@ class Todo extends Component {
 
                             </h5>
 
-                            <h6 className="card-subtitle mb-2 text-muted" style={{ margin: "1em" }}>
-                                Created at {moment(createdAt).format('Do MM YY')}
+                            <h6 className="card-subtitle mb-2 text-muted">
+                            Created at {moment(createdAt).format('Do MM YY')}
                             </h6>
+
+                            
+                            <h6 className="card-subtitle mb-2 text-muted">
+                           Deadline at {moment(deadlineTime).format('Do MM YY')}
+                            </h6>
+
                         </div>
                         {text ?
                             <div className="card-text" dangerouslySetInnerHTML={{ __html: text }} >

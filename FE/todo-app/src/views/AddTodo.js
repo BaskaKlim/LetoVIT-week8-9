@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom';
 class AddTodo extends Component {
     state = {
         title: '',
-        text: ''
+        text: '',
+        deadlineTime: ''
     };
 
     handleSubmit = async event => {
@@ -12,7 +13,8 @@ class AddTodo extends Component {
         // resentnutie formularu
         this.setState({
             title: '',
-            text: ''
+            text: '',
+            deadlineTime: ''
         })
         this.props.history.push('/');
     };
@@ -24,7 +26,7 @@ class AddTodo extends Component {
     };
 
     render() {
-        const { title, text } = this.state;
+        const { title, text, deadlineTime } = this.state;
         return (
             <form onSubmit={this.handleSubmit} className="mb-2" style={{ paddingLeft: "130px", paddingRight: "130px" }}>
                 <input
@@ -43,6 +45,16 @@ class AddTodo extends Component {
                     name="text"
                     placeholder="Text"
                     onChange={this.handleChange} />
+                   
+                    <input
+                    //  definujem si novy field s typom datetime-local, tento typ existuje
+                  className="form-control mb-2"
+                  type="datetime-local"
+                  name="deadlineTime"
+                  placeholder="Napis Deadline pre TODO"
+                  value={deadlineTime}
+                  onChange={this.handleChange}
+                  />
                 <button type="submit" className="btn btn-outline-success" disabled={!title}>Ulozit</button>
             </form>
         )

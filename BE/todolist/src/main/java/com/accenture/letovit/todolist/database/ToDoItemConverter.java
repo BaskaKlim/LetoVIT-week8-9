@@ -8,6 +8,8 @@ public class ToDoItemConverter {
 		DbToDoItem target = new DbToDoItem();
 
 		target.setCreatedAt(source.getCreatedAt());
+//		pridanie deadlineTime
+		target.setDeadlineTime(source.getDeadlineTime());
 		target.setFinished(source.isFinished());
 		target.setText(source.getText());
 		target.setTitle(source.getTitle());
@@ -21,9 +23,13 @@ public class ToDoItemConverter {
 		ToDoItem target = new ToDoItem();
 
 		target.setCreatedAt(source.getCreatedAt());
+//	    pridanie deadlineTime
+		target.setDeadlineTime(source.getDeadlineTime());
 		target.setFinished(source.isFinished());
 		target.setText(source.getText());
 		target.setTitle(source.getTitle());
+		
+		target.setId(source.getIdentifier());
 
 		return target;
 

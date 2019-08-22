@@ -4,10 +4,10 @@ import com.accenture.letovit.todolist.ToDoItem;
 
 public class ToDoValidator {
 	public static void validate(ToDoItem toDoItem) {
-		if (toDoItem.getTitle().length() > 10) {
+		if (toDoItem.getTitle().length() > 40) {
 			throw new RuntimeException("Dlhy titulok");
 		}
-		if (toDoItem.getText().length() > 150) {
+		if (toDoItem.getText().length() > 450) {
 			throw new RuntimeException("Chyba");
 		}
 		for (int i = 0; i < toDoItem.getTitle().length(); i++) {

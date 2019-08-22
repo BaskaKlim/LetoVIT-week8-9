@@ -3,16 +3,22 @@ package com.accenture.letovit.todolist;
 import java.io.Serializable;
 
 public class ToDoItem implements Serializable{
+//	pridam si String deadlineTime
+	private String id;
+	private String title; private String text; boolean finished; private String createdAt; private String deadlineTime;
+
 	
-	private String title; private String text; boolean finished; private String createdAt;
-
-
-
+	public String getId() {
+		return id;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getTitle() {
 		return title;
 	}
-
 
 	public void setTitle(String title) {
 		this.title = title;
@@ -48,12 +54,20 @@ public class ToDoItem implements Serializable{
 		this.createdAt = createdAt;
 	}
 
+// pridanie deadlineTime getter a setter
 
-
+	public String getDeadlineTime() {
+		return deadlineTime;
+	}
+	
+	public void setDeadlineTime(String deadlineTime) {
+		this.deadlineTime = deadlineTime;
+	}
 
 	@Override
 	public String toString() {
-		return "ToDoItem [title=" + title + ", text=" + text + ", finished=" + finished + ", createdAt=" + createdAt
+//		pridanie deadlineTime
+		return "ToDoItem [title=" + title + ", text=" + text + ", finished=" + finished + ", createdAt=" + createdAt + ", deadlineTime=" + deadlineTime 
 				+ "]";
 	}
 	

@@ -18,7 +18,7 @@ class App extends Component {
 
   async componentDidMount() {
     const result = await axios.get('/todos');
-    
+
     this.setState({
       todos: result.data
 
@@ -31,7 +31,9 @@ class App extends Component {
     const newTodo = {
       ...todo,
       createdAt: moment().format(),
-      finished: false
+      finished: false,
+  // musim si deadline definovat a prekonvertovat do stringoveho formatu na zobrazenie
+      deadlineTime: moment(todo.deadlineTime).format(),
     };
     const result = await axios.post('/todos', newTodo)
     newTodo.id = result.data;
@@ -44,14 +46,14 @@ class App extends Component {
   };
 
   editTodo = todo => {
-    const index = findIndex (this.state.todos, {id: todo.id});
+    const index = findIndex(this.state.todos, { id: todo.id });
     const todos = [...this.state.todos];
     todos.splice(index, 1, todo);
     this.setState({ todos: todos })
   };
 
   removeTodo = todo => {
-    const index = findIndex (this.state.todos, {id: todo.id});
+    const index = findIndex(this.state.todos, { id: todo.id });
     const todos = [...this.state.todos]
     todos.splice(index, 1);
     this.setState({ todos: todos });
@@ -71,7 +73,7 @@ class App extends Component {
               render={() => <AddTodo onAdd={this.addTodo} />}
             />
             <Route
-              path="/" exact render= {() => <TodoList onEdit={this.editTodo} onRemove={this.removeTodo} todos={todos} />}
+              path="/" exact render={() => <TodoList onEdit={this.editTodo} onRemove={this.removeTodo} todos={todos} />}
             />
 
             {/*   toto cele sa mi presunulo do noveho componentu TodoList

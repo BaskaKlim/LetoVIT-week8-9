@@ -14,6 +14,8 @@ public class DbToDoItem {
 	private String text;
 	private boolean finished;
 	private String createdAt;
+//	tu som si definovala moj deadlineTime
+	private String deadlineTime;
 	
 	// getters & setters si davam vygenerovat 
 	public String getIdentifier() {
@@ -39,6 +41,13 @@ public class DbToDoItem {
 	}
 	public void setCreatedAt(String createdAt) {
 		this.createdAt = createdAt;
+	}
+//	definovany getter a setter pre deadlinetime
+	public String getDeadlineTime() {
+		return deadlineTime;
+	}
+	public void setDeadlineTime(String deadlineTime) {
+		this.deadlineTime = deadlineTime;
 	}
 
 	public String getTitle() {
