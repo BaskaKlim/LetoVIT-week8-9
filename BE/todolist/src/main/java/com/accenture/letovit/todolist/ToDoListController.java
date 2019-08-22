@@ -30,7 +30,7 @@ public class ToDoListController {
 		this.repository = dbToDoItemRepository;
 	}
 
-	@RequestMapping(value = "todos.json", method = RequestMethod.POST)
+	@RequestMapping(value = "todos", method = RequestMethod.POST)
 	public SaveResponse addToDoItem(@RequestBody ToDoItem request) {
 		ToDoValidator.validate(request);
 		// pretty date & time
