@@ -4,17 +4,17 @@ class AddTodo extends Component {
     state = {
         title: '',
         text: '',
-        deadlineTime: ''
+        deadlineTime: '',
     };
 
     handleSubmit = async event => {
         event.preventDefault();
-      await this.props.onAdd(this.state)
+        await this.props.onAdd(this.state)
         // resentnutie formularu
         this.setState({
             title: '',
             text: '',
-            deadlineTime: ''
+            deadlineTime: '',
         })
         this.props.history.push('/');
     };
@@ -26,7 +26,8 @@ class AddTodo extends Component {
     };
 
     render() {
-        const { title, text, deadlineTime } = this.state;
+    // zadefinujem si aj renderovanu konstantu s atributom progressState
+        const { title, text, deadlineTime} = this.state;
         return (
             <form onSubmit={this.handleSubmit} className="mb-2" style={{ paddingLeft: "130px", paddingRight: "130px" }}>
                 <input
@@ -45,16 +46,16 @@ class AddTodo extends Component {
                     name="text"
                     placeholder="Text"
                     onChange={this.handleChange} />
-                   
-                    <input
+
+                <input
                     //  definujem si novy field s typom datetime-local, tento typ existuje
-                  className="form-control mb-2"
-                  type="datetime-local"
-                  name="deadlineTime"
-                  placeholder="Napis Deadline pre TODO"
-                  value={deadlineTime}
-                  onChange={this.handleChange}
-                  />
+                    className="form-control mb-2"
+                    type="datetime-local"
+                    name="deadlineTime"
+                    placeholder="Napis Deadline pre TODO"
+                    value={deadlineTime}
+                    onChange={this.handleChange}
+                />
                 <button type="submit" className="btn btn-outline-success" disabled={!title}>Ulozit</button>
             </form>
         )

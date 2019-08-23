@@ -1,13 +1,14 @@
 package com.accenture.letovit.todolist;
 
 public class UpdateRequest {
-	private boolean finished;
+	private String progressState;
 
-	public boolean isFinished() {
-		return finished;
+	public String getProgressState() {
+		return progressState;
 	}
 
-	public void setFinished(boolean finished) {
-		this.finished = finished;
+	public void setProgressState(String progressState) {
+		this.progressState = progressState;
 	}
+
 }

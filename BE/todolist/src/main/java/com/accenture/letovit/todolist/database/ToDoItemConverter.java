@@ -10,7 +10,8 @@ public class ToDoItemConverter {
 		target.setCreatedAt(source.getCreatedAt());
 //		pridanie deadlineTime
 		target.setDeadlineTime(source.getDeadlineTime());
-		target.setFinished(source.isFinished());
+//		zmenim si isFinished na set a get k ProgressState
+		target.setProgressState(source.getProgressState());
 		target.setText(source.getText());
 		target.setTitle(source.getTitle());
 
@@ -25,7 +26,8 @@ public class ToDoItemConverter {
 		target.setCreatedAt(source.getCreatedAt());
 //	    pridanie deadlineTime
 		target.setDeadlineTime(source.getDeadlineTime());
-		target.setFinished(source.isFinished());
+//		zmenim si isFinished na set a get k ProgressState
+		target.setProgressState(source.getProgressState());
 		target.setText(source.getText());
 		target.setTitle(source.getTitle());
 		

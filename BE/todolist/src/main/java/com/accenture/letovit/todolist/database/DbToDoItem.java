@@ -12,7 +12,7 @@ public class DbToDoItem {
 	private String identifier;
 	private String title;
 	private String text;
-	private boolean finished;
+	private String progressState;
 	private String createdAt;
 //	tu som si definovala moj deadlineTime
 	private String deadlineTime;
@@ -30,12 +30,14 @@ public class DbToDoItem {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public boolean isFinished() {
-		return finished;
+	
+	public String getProgressState() {
+		return progressState;
 	}
-	public void setFinished(boolean finished) {
-		this.finished = finished;
+	public void setProgressState(String progressState) {
+		this.progressState = progressState;
 	}
+
 	public String getCreatedAt() {
 		return createdAt;
 	}

@@ -73,7 +73,7 @@ public class ToDoListController {
 	public void updateToDoItem(@PathVariable String identifier, @RequestBody UpdateRequest requestBody) {
 		
 		DbToDoItem dbToDoItem = repository.findById(identifier).get();
-		dbToDoItem.setFinished(requestBody.isFinished());
+		dbToDoItem.setProgressState(requestBody.getProgressState());
 		repository.save(dbToDoItem);
 	}
 

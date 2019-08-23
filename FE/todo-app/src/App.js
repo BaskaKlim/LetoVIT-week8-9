@@ -31,9 +31,10 @@ class App extends Component {
     const newTodo = {
       ...todo,
       createdAt: moment().format(),
-      finished: false,
   // musim si deadline definovat a prekonvertovat do stringoveho formatu na zobrazenie
       deadlineTime: moment(todo.deadlineTime).format(),
+  // definujem si vychodiskovy stav pridavaneho ToDo na stav ready
+      progressState: "ready", 
     };
     const result = await axios.post('/todos', newTodo)
     newTodo.id = result.data;

@@ -5,7 +5,8 @@ import java.io.Serializable;
 public class ToDoItem implements Serializable{
 //	pridam si String deadlineTime
 	private String id;
-	private String title; private String text; boolean finished; private String createdAt; private String deadlineTime;
+//	premenim si boolean finished na String progressState
+	private String title; private String text; private String progressState; private String createdAt; private String deadlineTime;
 
 	
 	public String getId() {
@@ -35,15 +36,13 @@ public class ToDoItem implements Serializable{
 	}
 
 
-	public boolean isFinished() {
-		return finished;
+	public String getProgressState() {
+		return progressState;
 	}
 
-
-	public void setFinished(boolean finished) {
-		this.finished = finished;
+	public void setProgressState(String progressState) {
+		this.progressState = progressState;
 	}
-
 
 	public String getCreatedAt() {
 		return createdAt;
@@ -67,7 +66,7 @@ public class ToDoItem implements Serializable{
 	@Override
 	public String toString() {
 //		pridanie deadlineTime
-		return "ToDoItem [title=" + title + ", text=" + text + ", finished=" + finished + ", createdAt=" + createdAt + ", deadlineTime=" + deadlineTime 
+		return "ToDoItem [title=" + title + ", text=" + text + ", progressState=" + text + ", createdAt=" + createdAt + ", deadlineTime=" + deadlineTime 
 				+ "]";
 	}
 	

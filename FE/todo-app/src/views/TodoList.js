@@ -7,28 +7,34 @@ class TodoList extends Component {
         const todos = this.props.todos;
 
         return (
-        < Masonry className="todo">
-        
+            < Masonry className="todo">
 
-            {todos.map((todo) => {
-                const handleFinishTodo = () => {
-                    todo.finished = true;
-                    this.props.onEdit(todo);
-                };
 
-                const handleRemoveTodo = () => {
-                    this.props.onRemove(todo)
-                }
+                {todos.map((todo) => {
+                    const handleFinishTodo = () => {
+                        todo.progressState = "finished";
+                        this.props.onEdit(todo);
+                    };
 
-                return (
-                    <Todo todo={todo}
-                        key={todo.id}
-                        onFinish={handleFinishTodo}
-                        onRemove={handleRemoveTodo}
-                    />
-                );
-            })}
-        </Masonry>
+                    const handleRemoveTodo = () => {
+                        this.props.onRemove(todo)
+                    };
+
+                    const handleStartToDo= () => {
+                        todo.progressState = "progress";
+                        this.props.onEdit(todo);
+                    };
+
+                    return (
+                        <Todo todo={todo}
+                            key={todo.id}
+                            onFinish={handleFinishTodo}
+                            onRemove={handleRemoveTodo}
+                            onStart={handleStartToDo}
+                        />
+                    );
+                })}
+            </Masonry>
         )
     }
 }

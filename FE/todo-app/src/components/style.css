@@ -7,6 +7,11 @@
     border-top-color: #20b2aa;
     border-top-width: 3px;
   }
+  .customInProgress {
+    border-top-color: rgb(255, 255, 132);
+    border-top-width: 3px;
+  }
+
 
   .close {
 
@@ -20,4 +25,8 @@
   .passedDeadline {
     border-color:  lightcoral;
    border-width: 5px;
+  }
+/* nastavujem si max sirku jednotlivych cards todo itemov */
+  .card {
+    max-width: 300px;
   }
