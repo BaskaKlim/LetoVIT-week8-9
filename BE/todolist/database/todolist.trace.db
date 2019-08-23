@@ -1136,3 +1136,7 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/Kli
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
 	... 60 more
+2019-08-22 19:28:34 jdbc[64]: exception
+org.h2.jdbc.JdbcSQLDataException: Hodnota je príliš dlhá pre stĺpec """TEXT"" VARCHAR(255)": "STRINGDECODE('For this week''s homework assignment, create a website to show off your new skills.\n\nCore HTML5 skills you shoul... (311)"
+Value too long for column """TEXT"" VARCHAR(255)": "STRINGDECODE('For this week''s homework assignment, create a website to show off your new skills.\n\nCore HTML5 skills you shoul... (311)"; SQL statement:
+insert into db_to_do_item (created_at, deadline_time, finished, text, title, identifier) values (?, ?, ?, ?, ?, ?) [22001-199]

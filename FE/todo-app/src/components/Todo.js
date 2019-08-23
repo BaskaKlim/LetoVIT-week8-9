@@ -38,7 +38,10 @@ class Todo extends Component {
 
         if (finished) classes += " customSuccess";
         else classes += " customDanger";
+/* pridavam si ramcek ak mi passol deadline. Treba mi urcit opat podmienku, danu klasu uz dole volam, staci mi pridat dalsiu podmienku ze ak deadline passed, 
+ then do style passedDeadline, ktory som si definovala v style.css */
 
+        if(moment(now).isBefore(deadlineTime)) classes += " passedDeadline";
 
         return (
 

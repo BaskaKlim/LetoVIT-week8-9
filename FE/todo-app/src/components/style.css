@@ -17,3 +17,7 @@
 
   }
   
+  .passedDeadline {
+    border-color:  lightcoral;
+   border-width: 5px;
+  }
